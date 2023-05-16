@@ -8,9 +8,14 @@
 
     body {
         font-family: sans-serif;
+        height: 100vh;
+        color: white;
+    }
+
+    main {
+        height: 100vh;
         display: flex;
         flex-direction: column;
-        height: 100vh;
     }
 
     header {
@@ -20,19 +25,18 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        background-color: black;
+        /* background-color: black; */
+        background-color: white;
     }
     header h1 {
         font-size: 8rem;
-        color: white;
-    }
-
-    header:hover {
-        background-color: #111;
+        /* color: white; */
+        color: black;
     }
 
     .circle {
-        background-color: white;
+        background-color: black;
+        /* background-color: white; */
         border-radius: 50%;
         aspect-ratio: 1/1;
         height: 26vh;
@@ -44,15 +48,21 @@
         flex-grow: 1;
         flex-direction: column;
         justify-content: flex-end;
+        background-color: black;
     }
 
     a {
         text-decoration: none;
+        color: white;
+    }
+
+    a:visited {
+        color: white;
     }
 
     a h2 {
         font-size: 5rem;
-        border-bottom: 1rem solid black;
+        border-bottom: 1rem solid white;
         cursor: pointer;
     }
 
@@ -66,20 +76,23 @@
         border-bottom: 1rem solid #333;
     }
 </style>
+<script>
+    function scrollNextPage() {
+        window.scrollBy({ top: 9999999, behavior: 'smooth' });
+    }
+</script>
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="favicon.png" sizes="any" type="image/png">
     <title>Kill the Buddha</title>
 </head>
 <body>
+    <main>
     <header>
         <h1>KILL THE BUDDHA</h1>
         <div class="circle"></div>
     </header>
     <nav>
-        <a href="/about.html">
-            <h2>ABOUT</h2>
-        </a>
         <a href="https://killthebuddha.svbtle.com">
             <h2>BLOG</h2>
         </a>
@@ -92,9 +105,13 @@
         <a href="https://instagram.com/killthebuddh4">
             <h2>INSTAGRAM</h2>
         </a>
-        <a href="/projects.html">
-            <h2>WORK</h2>
+        <a onclick="scrollNextPage()">
+            <h2>PROJECTS</h2>
         </a>
     </nav>
+    </main>
+    <main>
+
+    </main>
 </body>
 </html>

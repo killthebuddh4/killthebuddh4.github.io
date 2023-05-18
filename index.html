@@ -9,7 +9,7 @@
     body {
         font-family: sans-serif;
         height: 100vh;
-        color: white;
+        color: black;
     }
 
     main {
@@ -43,7 +43,7 @@
         margin-bottom: -1vh;
     }
 
-    nav {
+    .primary-nav {
         display: flex;
         flex-grow: 1;
         flex-direction: column;
@@ -51,29 +51,69 @@
         background-color: black;
     }
 
-    a {
-        text-decoration: none;
-        color: white;
+    .secondary-nav {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        background-color: white;
     }
 
-    a:visited {
-        color: white;
+    a {
+        text-decoration: none;
     }
 
     a h2 {
-        font-size: 5rem;
-        border-bottom: 1rem solid white;
         cursor: pointer;
+        font-size: 5rem;
     }
 
-    a h2:hover {
+
+    .primary-nav a {
+        color: white;
+    }
+
+    .primary-nav a:visited {
+        color: white;
+    }
+
+    .primary-nav a h2 {
+        border-bottom: 1rem solid white;
+    }
+
+    .primary-nav a h2:hover {
         color: #333;
         border-bottom: 1rem solid #333;
     }
 
-    a h2:active {
+    .primary-nav a h2:active {
         color: #333;
         border-bottom: 1rem solid #333;
+    }
+
+    .secondary-nav a {
+        color: black;
+    }
+
+    .secondary-nav a:visited {
+        color: black;
+    }
+
+    .secondary-nav a h2 {
+        border-bottom: 1rem solid black;
+    }
+
+    .secondary-nav a h2:hover {
+        color: #333;
+        border-bottom: 1rem solid #333;
+    }
+
+    .secondary-nav a h2:active {
+        color: #333;
+        border-bottom: 1rem solid #333;
+    }
+
+    .details h1 {
+        margin-top: 3rem;
     }
 </style>
 <script>
@@ -92,7 +132,10 @@
         <h1>KILL THE BUDDHA</h1>
         <div class="circle"></div>
     </header>
-    <nav>
+    <nav class="primary-nav">
+        <a onclick="scrollNextPage()">
+            <h2>WHOAMI</h2>
+        </a>
         <a href="https://killthebuddha.svbtle.com">
             <h2>BLOG</h2>
         </a>
@@ -105,13 +148,46 @@
         <a href="https://instagram.com/killthebuddh4">
             <h2>INSTAGRAM</h2>
         </a>
-        <a onclick="scrollNextPage()">
-            <h2>PROJECTS</h2>
-        </a>
     </nav>
     </main>
     <main>
-
+        <nav class="secondary-nav">
+        <a href="https://news.ycombinator.com/user?id=killthebuddha">
+            <h2>HACKER NEWS</h2>
+        </a>
+        <a href="">
+            <h2>FARCASTER</h2>
+        </a>
+        <a href="">
+            <h2>LENSTER</h2>
+        </a>
+        <a href="">
+            <h2>BLUESKY</h2>
+        </a>
+        <a href="/ay.html">
+            <h2>ONLYFANS 😉</h2>
+        </a>
+        </nav>
+    </main>
+    <main class="details">
+        <h1>WHOAMI</h1>
+        <p>
+            I'm Achilles, a software engineer, a dad. I like to create and I
+            like to think. Sometimes I really, really wish I was an artist.
+            Other times I just want to get rich. I think life matters and is
+            mostly hard work. Paradise is sunlight, cold drinks, and my family.
+            When the Sun goes down I like to read. I can't remember anything
+            between 2008 and 2013. <strong>My son was born in July 2021 and quaked me to my
+            core, I hope I can make him proud.</strong>
+        </p>
+        <h1>PROJECTS</h1>
+        <p>TODO: A list of the things I spend my time on these days.</p>
+        <h1>AMBITION</h1>
+        <p>TODO: A list of things that I hope to spend my time on some day.</p>
+        <h1>GOTO</h1>
+        <p>TODO: A short list of things I think are interesting.</p>
+        <h1>READING LIST</h1>
+        <p>TODO: A long, ordered list of stuff I think is worth reading.</p>
     </main>
 </body>
 </html>

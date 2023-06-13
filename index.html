@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-    html, body, header, h1, h2 {
+    html, body, header, h1, h2, ul, ol, li {
         margin: 0;
         padding: 0;
+    }
+
+    ul, ol {
+        list-style: none;
     }
 
     body {
@@ -120,6 +124,14 @@
     .details h1 {
         margin-top: 3rem;
     }
+
+    .projects {
+        margin-top: 20px;
+    }
+
+    .projects a:hover {
+        text-decoration: underline;
+    }
 </style>
 <script>
     function scrollNextPage() {
@@ -175,9 +187,9 @@
         </nav>
     </main>
     <main class="details">
-        <h1>WHOAMI</h1>
+        <h1>⚡️ WHOAMI ⚡️</h1>
         <p>
-            <strong>Lightning Round:</strong> I'm Achilles, a software engineer, and a dad. I like to be creative and I
+            I'm Achilles, a software engineer, and a dad. I like to be creative and I
             like to think about things and I like to spend time with my family.
             Sometimes I really, really wish I was an artist but other times I
             just want to get rich. I think life matters and is
@@ -188,12 +200,23 @@
             can make him proud.</strong>
         </p>
         <h1>PROJECTS</h1>
-        <p>TODO: A list of the things I spend my time on these days.</p>
-        <h1>AMBITION</h1>
+            <ul class="projects">
+            <li><a href="https://github.com/relaycc">https://github.com/relaycc</a></li>
+            <li><a href="https://killthebuddha.svbtle.com">https://killthebuddha.svbtle.com</a></li>
+            <li><a
+            href="https://github.com/meadow-sh/meadow">https://github.com/meadow-sh/meadow</a></li>
+            <li>
+                <a href="https://gadfl.ai">https://gadfl.ai</a>
+            </li>
+           <li><a
+            href="https://github.com/killthebuddh4/messhai">https://github.com/killthebuddh4/messhai</a></li>
+            <li><a href="https://illustrated.ai">https://illustrated.ai</a></li>
+            </ul>
+        <h1>AMBITION 🔭</h1>
         <p>TODO: A list of things that I hope to spend my time on some day.</p>
         <h1>GOTO</h1>
         <p>TODO: A short list of things I think are interesting.</p>
-        <h1>READING LIST</h1>
+        <h1>REA📚ING LIST</h1>
         <p>TODO: A long, ordered list of stuff I think is worth reading.</p>
     </main>
 </body>

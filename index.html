@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
     html, body, header, h1, h2, ul, ol, li {
         margin: 0;
@@ -10,11 +12,30 @@
         list-style: none;
     }
 
+
+
     body {
         height: 100vh;
-        color: black;
-        font-family: sans-serif;
+        font-family: 'Roboto Mono';
         font-size: 20px;
+        background-image: url("buddha.gif");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: black;
+        background-position: bottom 0 right -30vw;
+        background-size: 130vw 100vh;
+    }
+
+    /* @media (max-width: 1500px) {
+        body {
+            background-position: bottom 0 right -30vw;
+        }
+    } */
+
+    @media (max-width: 600px) {
+        body {
+            background-image: none;
+        }
     }
 
     main {
@@ -30,22 +51,16 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        /* background-color: black; */
-        background-color: white;
+        color: white;
     }
     header h1 {
         font-size: 8rem;
-        /* color: white; */
-        color: black;
     }
 
-    .circle {
-        background-color: black;
-        /* background-color: white; */
-        border-radius: 50%;
-        aspect-ratio: 1/1;
+    header img {
+        opacity: 1;
         height: 26vh;
-        margin-bottom: -1vh;
+        margin-left: -10vh;
     }
 
     .primary-nav {
@@ -53,7 +68,6 @@
         flex-grow: 1;
         flex-direction: column;
         justify-content: flex-end;
-        background-color: black;
     }
 
     .secondary-nav {
@@ -79,15 +93,6 @@
 
     .primary-nav a:visited {
         color: white;
-    }
-
-    .primary-nav a h2 {
-        border-bottom: 1rem solid white;
-    }
-
-    .primary-nav a h2:hover {
-        color: #333;
-        border-bottom: 1rem solid #333;
     }
 
     .primary-nav a h2:active {
@@ -119,6 +124,7 @@
 
     .details {
         padding: 1rem;
+        background-color: white;
     }
 
     .details h1 {
@@ -132,6 +138,28 @@
     .projects a:hover {
         text-decoration: underline;
     }
+
+    .buddha {
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        transition: all 1s ease-in;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .buddha.load {
+        opacity: 1;
+    }
+
+    footer {
+        background-color: black;
+        display: flex;
+        flex-direction: row;
+        min-height: 10vh;
+        color: white;
+    }
 </style>
 <script>
     function scrollNextPage() {
@@ -141,13 +169,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="favicon.png" sizes="any" type="image/png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
     <title>Kill the Buddha</title>
 </head>
 <body>
     <main>
     <header>
         <h1>KILL THE BUDDHA</h1>
-        <div class="circle"></div>
     </header>
     <nav class="primary-nav">
         <a onclick="scrollNextPage()">

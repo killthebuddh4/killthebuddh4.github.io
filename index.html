@@ -1,18 +1,32 @@
 <!doctype html>
 <html lang="en">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <style>
-    html,
     body,
-    header,
-    h1,
-    h2,
+    main,
     ul,
     ol,
-    li {
+    div,
+    a,
+    li,
+    h1,
+    h2,
+    p {
+      text-decoration: none;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      font-size: 20px;
+    }
+
+    main {
+      height: 100vh;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+        height: 100vh;
+        max-width: 65ch;
     }
 
     ul,
@@ -21,161 +35,20 @@
     }
 
     a {
-      text-decoration: none;
-    }
-
-    body {
-      font-family: "Roboto Mono";
-      font-size: 20px;
-      background-color: black;
-      background-image: url("buddha.gif");
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: bottom 0 right -30vw;
-      background-size: 130vw 100vh;
-      padding-left: 1rem;
-    }
-
-    .mobile {
-      display: none;
-    }
-
-    main {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header h1 {
-      font-size: 8rem;
-      line-height: 1;
-      color: #ffffff;
-      text-shadow:
-        0 0 2px #ffffff,
-        0 0 5px #ffffff,
-        0 0 10px #00ff00;
-    }
-
-    header h1:hover {
-      text-shadow:
-        0 0 2px #00ff00,
-        0 0 5px #00ff00,
-        0 0 10px #00ff00;
-    }
-
-    header h1:active {
-      text-shadow:
-        0 0 2px #00ff00,
-        0 0 5px #00ff00,
-        0 0 10px #00ff00,
-        0 0 13px #33ff33;
-    }
-
-    a h2 {
       cursor: pointer;
-      font-size: 5rem;
+      color: blue;
     }
 
-    .primary-nav {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      flex-grow: 1;
+    a:hover {
+        text-decoration: underline;
     }
 
-    .primary-nav a {
-      color: white;
-      text-shadow:
-        0 0 2px #ffffff,
-        0 0 5px #ffffff,
-        0 0 10px #00ff00;
+    a:visited {
+        color: blue;
     }
 
-    .primary-nav a:hover {
-      text-shadow:
-        0 0 2px #00ff00,
-        0 0 5px #00ff00,
-        0 0 10px #00ff00;
-    }
-
-    .primary-nav a:active {
-      text-shadow:
-        0 0 2px #00ff00,
-        0 0 5px #00ff00,
-        0 0 10px #00ff00,
-        0 0 13px #33ff33;
-    }
-
-    .details {
-      padding-bottom: 4rem;
-    }
-
-    .details h2 {
-      font-size: 5rem;
-      color: white;
-      margin-bottom: 1.5rem;
-      text-shadow:
-        0 0 2px #ffffff,
-        0 0 5px #ffffff,
-        0 0 10px #00ff00;
-    }
-
-    .details a {
-      color: white;
-    }
-
-    .details a:hover {
-      text-decoration: underline;
-    }
-
-    .projects {
-      margin-top: auto;
-    }
-
-    @media (max-width: 1000px) {
-      body {
-        background-size: 1300px 1150px;
-        background-position: bottom 0 right -30vw;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .mobile {
-        display: block;
-      }
-      .desktop {
-        display: none;
-      }
-      body {
-        background-size: 1000px 1150px;
-        background-position: bottom 0 right -30vw;
-      }
-    }
-
-    @media (max-width: 500px) {
-      header h1 {
-        font-size: 5rem;
-      }
-      .primary-nav h2 {
-        font-size: 2rem;
-      }
-      .projects {
-        background-color: black;
-        padding: 2rem;
-      }
-      .projects h2 {
-        font-size: 2rem;
-      }
-      .mobile {
-        display: block;
-      }
-      .desktop {
-        display: none;
-      }
-      body {
-        background-size: 1000px 100vh;
-        background-position: bottom 0 right -85vw;
-      }
+    .scroller {
+        color: black;
     }
   </style>
   <head>
@@ -186,20 +59,34 @@
       rel="stylesheet"
     />
     <title>Kill the Buddha</title>
+    <script>
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+      function scrollByPage() {
+        window.scrollBy({
+          top: window.innerHeight,
+          behavior: "smooth",
+        });
+      }
+      function scrollByTwoPages() {
+        window.scrollBy({
+          top: window.innerHeight * 2,
+          behavior: "smooth",
+        });
+      }
+    </script>
   </head>
   <body>
-    <main class="desktop">
-      <header>
-        <a
-          href="https://chat.openai.com/share/20b89c56-7ea8-49db-8f49-58f0759ab2db"
-          target="_blank"
-          rel="norefferer"
-        >
-          <h1>kill the buddha</h1>
+    <main>
+      <nav>
+        <a class="scroller" onClick="scrollByPage()">
+          <h2>projects</h2>
         </a>
-      </header>
-      <nav class="primary-nav">
-        <a href="https://relay.network">
+        <a class="scroller" onClick="scrollByTwoPages()">
           <h2>whoami</h2>
         </a>
         <a href="https://killthebuddha.svbtle.com">
@@ -209,62 +96,47 @@
           <h2>github</h2>
         </a>
         <a href="https://twitter.com/killthebuddha_">
-          <h2>txitter</h2>
-        </a>
-        <a href="https://instagram.com/killthebuddh4">
-          <h2>instagram</h2>
+          <h2>twitter</h2>
         </a>
       </nav>
     </main>
-    <main class="mobile">
-      <header>
-        <a
-          href="https://chat.openai.com/share/20b89c56-7ea8-49db-8f49-58f0759ab2db"
-          target="_blank"
-          rel="norefferer"
-        >
-          <h1>kill the buddha</h1>
-        </a>
-      </header>
+    <main>
+      <a class="scroller" onCLick="scrollToTop()">
+        <h2>top</h2>
+      </a>
+      <ul>
+        <li><a href="https://relay.network">https://relay.network</a></li>
+        <li>
+          <a href="https://github.com/meadow-sh/meadow">https://meadow.sh</a>
+        </li>
+        <li>
+          <a href="https://gadfl.ai">https://gadfl.ai</a>
+        </li>
+        <li>
+          <a href="https://github.com/killthebuddh4/messhai"
+            >https://messh.ai</a
+          >
+        </li>
+        <li><a href="https://illustrated.ai">https://illustrated.ai</a></li>
+      </ul>
+      <a class="scroller" onCLick="scrollByPage()">
+        <h2>whoami</h2>
+      </a>
     </main>
-    <main class="mobile">
-      <nav class="primary-nav">
-        <a href="https://relay.network">
-          <h2>whoami</h2>
-        </a>
-        <a href="https://killthebuddha.svbtle.com">
-          <h2>writing</h2>
-        </a>
-        <a href="https://github.com/killthebuddh4">
-          <h2>github</h2>
-        </a>
-        <a href="https://twitter.com/killthebuddha_">
-          <h2>txitter</h2>
-        </a>
-        <a href="https://instagram.com/killthebuddh4">
-          <h2>instagram</h2>
-        </a>
-      </nav>
-    </main>
-    <main class="details">
-      <div class="projects">
-        <h2>projects</h2>
-        <ul>
-          <li><a href="https://relay.network">https://relay.network</a></li>
-          <li>
-            <a href="https://github.com/meadow-sh/meadow">https://meadow.sh</a>
-          </li>
-          <li>
-            <a href="https://gadfl.ai">https://gadfl.ai</a>
-          </li>
-          <li>
-            <a href="https://github.com/killthebuddh4/messhai"
-              >https://messh.ai</a
-            >
-          </li>
-          <li><a href="https://illustrated.ai">https://illustrated.ai</a></li>
-        </ul>
-      </div>
+    <main>
+      <a class="scroller" onCLick="scrollToTop()">
+        <h2>top</h2>
+      </a>
+      <p>
+        My name's Achilles. I work as a software engineer and as a dad. I like
+        to be creative, think about things, spend time with my family, and work
+        hard. Nihilism is my least-favorite belief system and it's not even
+        close.  I'm a huge fan of sunsets and cold drinks. At night I like to
+        read.  Sometimes I drink too often, sometimes I drink too much, but I
+        don't often drink too much. I'm way too proud of being left-handed. If
+        my kids grow up to be happy, talented adults who are proud of
+        their family, then I'll die a happy man.
+      </p>
     </main>
   </body>
 </html>

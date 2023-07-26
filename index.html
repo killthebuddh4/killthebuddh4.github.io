@@ -12,30 +12,24 @@
         list-style: none;
     }
 
-
+    a {
+        text-decoration: none;
+    }
 
     body {
-        height: 100vh;
         font-family: 'Roboto Mono';
         font-size: 20px;
+        background-color: black;
         background-image: url("buddha.gif");
         background-repeat: no-repeat;
         background-attachment: fixed;
-        background-color: black;
         background-position: bottom 0 right -30vw;
         background-size: 130vw 100vh;
+        padding-left: 1rem;
     }
 
-    /* @media (max-width: 1500px) {
-        body {
-            background-position: bottom 0 right -30vw;
-        }
-    } */
-
-    @media (max-width: 600px) {
-        body {
-            background-image: none;
-        }
+    .mobile {
+        display: none;
     }
 
     main {
@@ -44,41 +38,29 @@
         flex-direction: column;
     }
 
-    header {
-        overflow-x: hidden;
-        overflow-y: hidden;
-        height: 25vh;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        color: white;
-    }
     header h1 {
         font-size: 8rem;
+        line-height: 1;
+        color: #ffffff;
+        text-shadow: 
+            0 0 2px #ffffff,
+            0 0 5px #ffffff,
+            0 0 10px #00ff00
     }
 
-    header img {
-        opacity: 1;
-        height: 26vh;
-        margin-left: -10vh;
+    header h1:hover {
+        text-shadow: 
+            0 0 2px #00ff00,
+            0 0 5px #00ff00,
+            0 0 10px #00ff00
     }
 
-    .primary-nav {
-        display: flex;
-        flex-grow: 1;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-
-    .secondary-nav {
-        display: flex;
-        flex-grow: 1;
-        flex-direction: column;
-        background-color: white;
-    }
-
-    a {
-        text-decoration: none;
+    header h1:active {
+        text-shadow: 
+            0 0 2px #00ff00,
+            0 0 5px #00ff00,
+            0 0 10px #00ff00,
+            0 0 13px #33ff33
     }
 
     a h2 {
@@ -86,86 +68,110 @@
         font-size: 5rem;
     }
 
+    .primary-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        flex-grow: 1;
+    }
 
     .primary-nav a {
         color: white;
+        text-shadow: 
+            0 0 2px #ffffff,
+            0 0 5px #ffffff,
+            0 0 10px #00ff00
     }
 
-    .primary-nav a:visited {
-        color: white;
+    .primary-nav a:hover {
+        text-shadow: 
+            0 0 2px #00ff00,
+            0 0 5px #00ff00,
+            0 0 10px #00ff00
     }
 
-    .primary-nav a h2:active {
-        color: #333;
-        border-bottom: 1rem solid #333;
-    }
-
-    .secondary-nav a {
-        color: black;
-    }
-
-    .secondary-nav a:visited {
-        color: black;
-    }
-
-    .secondary-nav a h2 {
-        border-bottom: 1rem solid black;
-    }
-
-    .secondary-nav a h2:hover {
-        color: #333;
-        border-bottom: 1rem solid #333;
-    }
-
-    .secondary-nav a h2:active {
-        color: #333;
-        border-bottom: 1rem solid #333;
+    .primary-nav a:active {
+        text-shadow: 
+            0 0 2px #00ff00,
+            0 0 5px #00ff00,
+            0 0 10px #00ff00,
+            0 0 13px #33ff33
     }
 
     .details {
-        padding: 1rem;
-        background-color: white;
+        padding-bottom: 4rem;
     }
 
-    .details h1 {
-        margin-top: 3rem;
+    .details h2 {
+        font-size: 5rem;
+        color: white;
+        margin-bottom: 1.5rem;
+        text-shadow: 
+            0 0 2px #ffffff,
+            0 0 5px #ffffff,
+            0 0 10px #00ff00
     }
 
-    .projects {
-        margin-top: 20px;
+    .details a {
+        color: white;
     }
 
-    .projects a:hover {
+    .details a:hover {
         text-decoration: underline;
     }
 
-    .buddha {
-        position: absolute;
-        top: 0;
-        right: 0;
-        opacity: 0;
-        transition: all 1s ease-in;
-        pointer-events: none;
-        z-index: 0;
+    .projects {
+        margin-top: auto;
     }
 
-    .buddha.load {
-        opacity: 1;
+    @media (max-width: 1000px) {
+        body {
+            background-size: 1300px 1150px;
+            background-position: bottom 0 right -30vw;
+        }
     }
 
-    footer {
-        background-color: black;
-        display: flex;
-        flex-direction: row;
-        min-height: 10vh;
-        color: white;
+    @media (max-width: 600px) {
+        .mobile {
+            display: block;
+        }
+        .desktop {
+            display: none;
+        }
+        body {
+            background-size: 1000px 1150px;
+            background-position: bottom 0 right -30vw;
+        }
     }
+
+    @media (max-width: 500px) {
+        header h1 {
+            font-size: 5rem;
+        }
+        .primary-nav h2 {
+            font-size: 2rem;
+        }
+        .projects {
+            background-color: black;
+            padding: 2rem;
+        }
+        .projects h2 {
+            font-size: 2rem;
+        }
+        .mobile {
+            display: block;
+        }
+        .desktop {
+            display: none;
+        }
+        body {
+            background-size: 1000px 100vh;
+            background-position: bottom 0 right -85vw;
+        }
+    }
+
+
 </style>
-<script>
-    function scrollNextPage() {
-        window.scrollBy({ top: 9999999, behavior: 'smooth' });
-    }
-</script>
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="favicon.png" sizes="any" type="image/png">
@@ -173,79 +179,75 @@
     <title>Kill the Buddha</title>
 </head>
 <body>
-    <main>
-    <header>
-        <h1>KILL THE BUDDHA</h1>
-    </header>
-    <nav class="primary-nav">
-        <a onclick="scrollNextPage()">
-            <h2>WHOAMI</h2>
-        </a>
-        <a href="https://killthebuddha.svbtle.com">
-            <h2>BLOG</h2>
-        </a>
-        <a href="https://github.com/killthebuddh4">
-            <h2>GITHUB</h2>
-        </a>
-        <a href="https://twitter.com/killthebuddha_">
-            <h2>TWITTER</h2>
-        </a>
-        <a href="https://instagram.com/killthebuddh4">
-            <h2>INSTAGRAM</h2>
-        </a>
-    </nav>
+    <main class="desktop">
+        <header>
+            <a
+            href="https://chat.openai.com/share/20b89c56-7ea8-49db-8f49-58f0759ab2db"
+            target="_blank" rel="norefferer">
+                <h1>kill the buddha</h1>
+            </a>
+        </header>
+        <nav class="primary-nav">
+            <a href="https://relay.network">
+                <h2>whoami</h2>
+            </a>
+            <a href="https://killthebuddha.svbtle.com">
+                <h2>writing</h2>
+            </a>
+            <a href="https://github.com/killthebuddh4">
+                <h2>github</h2>
+            </a>
+            <a href="https://twitter.com/killthebuddha_">
+                <h2>txitter</h2>
+            </a>
+            <a href="https://instagram.com/killthebuddh4">
+                <h2>instagram</h2>
+            </a>
+        </nav>
     </main>
-    <main>
-        <nav class="secondary-nav">
-        <a href="https://news.ycombinator.com/user?id=killthebuddha">
-            <h2>HACKER NEWS</h2>
-        </a>
-        <a href="">
-            <h2>FARCASTER</h2>
-        </a>
-        <a href="">
-            <h2>LENSTER</h2>
-        </a>
-        <a href="">
-            <h2>BLUESKY</h2>
-        </a>
-        <a href="/ay.html">
-            <h2>ONLYFANS 😉</h2>
-        </a>
+    <main class="mobile">
+        <header>
+            <a
+            href="https://chat.openai.com/share/20b89c56-7ea8-49db-8f49-58f0759ab2db"
+            target="_blank" rel="norefferer">
+                <h1>kill the buddha</h1>
+            </a>
+        </header>
+    </main>
+    <main class="mobile">
+        <nav class="primary-nav">
+            <a href="https://relay.network">
+                <h2>whoami</h2>
+            </a>
+            <a href="https://killthebuddha.svbtle.com">
+                <h2>writing</h2>
+            </a>
+            <a href="https://github.com/killthebuddh4">
+                <h2>github</h2>
+            </a>
+            <a href="https://twitter.com/killthebuddha_">
+                <h2>txitter</h2>
+            </a>
+            <a href="https://instagram.com/killthebuddh4">
+                <h2>instagram</h2>
+            </a>
         </nav>
     </main>
     <main class="details">
-        <h1>⚡️ WHOAMI ⚡️</h1>
-        <p>
-            I'm Achilles, a software engineer, and a dad. I like to be creative and I
-            like to think about things and I like to spend time with my family.
-            Sometimes I really, really wish I was an artist but other times I
-            just want to get rich. I think life matters and is
-            mostly hard work. If we can, we should make the world better. My paradise is sunlight, cold drinks, and my family.
-            At night I like to read. Sometimes I drink too often, sometimes I
-            drink too much, but I don't often drink too much. I'm definitely
-            addicted to caffeine. I'm way too proud of being left-handed. <strong> Everything changed when my son was born, I hope I
-            can make him proud.</strong>
-        </p>
-        <h1>PROJECTS</h1>
-            <ul class="projects">
-            <li><a href="https://github.com/relaycc">https://github.com/relaycc</a></li>
-            <li><a href="https://killthebuddha.svbtle.com">https://killthebuddha.svbtle.com</a></li>
+        <div class="projects">
+            <h2>projects</h2>
+            <ul>
+            <li><a href="https://relay.network">https://relay.network</a></li>
             <li><a
-            href="https://github.com/meadow-sh/meadow">https://github.com/meadow-sh/meadow</a></li>
+            href="https://github.com/meadow-sh/meadow">https://meadow.sh</a></li>
             <li>
                 <a href="https://gadfl.ai">https://gadfl.ai</a>
             </li>
            <li><a
-            href="https://github.com/killthebuddh4/messhai">https://github.com/killthebuddh4/messhai</a></li>
+            href="https://github.com/killthebuddh4/messhai">https://messh.ai</a></li>
             <li><a href="https://illustrated.ai">https://illustrated.ai</a></li>
             </ul>
-        <h1>AMBITION 🔭</h1>
-        <p>TODO: A list of things that I hope to spend my time on some day.</p>
-        <h1>GOTO</h1>
-        <p>TODO: A short list of things I think are interesting.</p>
-        <h1>REA📚ING LIST</h1>
-        <p>TODO: A long, ordered list of stuff I think is worth reading.</p>
+        </div>
     </main>
 </body>
 </html>

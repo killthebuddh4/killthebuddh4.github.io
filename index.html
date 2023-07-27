@@ -20,13 +20,12 @@
     }
 
     main {
-      height: 100vh;
+      display: none;
+      height: calc(100 * var(--vh));
       padding: 1rem;
-      display: flex;
       flex-direction: column;
       justify-content: flex-end;
-        height: 100vh;
-        max-width: 65ch;
+      max-width: 65ch;
     }
 
     ul,
@@ -60,6 +59,32 @@
     />
     <title>Kill the Buddha</title>
     <script>
+      function setVh() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+
+      window.onload = function () {
+        setVh();
+        const mains = document.querySelectorAll('main');
+        for (let i = 0; i < mains.length; i++) {
+          mains[i].style.display = "flex";
+        }
+      };
+
+      let firing = false;
+      window.addEventListener('resize', () => {
+        if (firing) {
+          return;
+        } else {
+          setVh();
+          firing = true;
+          setTimeout(() => {
+            firing = false;
+          }, 100);
+        }
+      });
+
       function scrollToTop() {
         window.scrollTo({
           top: 0,
@@ -131,9 +156,10 @@
         My name's Achilles. I work as a software engineer and as a dad. I like
         to be creative, think about things, spend time with my family, and work
         hard. Nihilism is my least-favorite belief system and it's not even
-        close.  I'm a huge fan of sunsets and cold drinks. At night I like to
-        read.  Sometimes I drink too often, sometimes I drink too much, but I
-        don't often drink too much. I'm way too proud of being left-handed. If
+        close. I'm a huge fan of sunsets and cold drinks. At night I like to
+        read. I'm way too proud of being left-handed. I believe that
+        responsibilty precedes power and try to live accordingly. I like
+        Socrates but not Plato. If
         my kids grow up to be happy, talented adults who are proud of
         their family, then I'll die a happy man.
       </p>

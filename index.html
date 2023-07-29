@@ -72,31 +72,20 @@
         }
       };
 
-      let firing = false;
-      window.addEventListener('resize', () => {
-        if (firing) {
-          return;
-        } else {
-          setVh();
-          firing = true;
-          setTimeout(() => {
-            firing = false;
-          }, 100);
-        }
-      });
-
       function scrollToTop() {
         window.scrollTo({
           top: 0,
           behavior: "smooth",
         });
       }
+
       function scrollByPage() {
         window.scrollBy({
           top: window.innerHeight,
           behavior: "smooth",
         });
       }
+
       function scrollByTwoPages() {
         window.scrollBy({
           top: window.innerHeight * 2,

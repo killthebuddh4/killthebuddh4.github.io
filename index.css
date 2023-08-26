@@ -1,0 +1,60 @@
+    body,
+    main,
+    section,
+    ul,
+    ol,
+    div,
+    a,
+    li,
+    h1,
+    h2,
+    p {
+      text-decoration: none;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-size: 20px;
+    }
+
+    section {
+      display: none;
+      height: calc(100 * var(--vh));
+      padding: 1rem;
+      flex-direction: column;
+      justify-content: flex-end;
+      max-width: 65ch;
+    }
+
+    article {
+      padding: 1rem;
+      flex-direction: column;
+      justify-content: flex-start;
+      max-width: 65ch;
+    }
+
+    .top {
+      margin-bottom: auto;
+    }
+
+    ul,
+    ol {
+      list-style: none;
+    }
+
+    a {
+      cursor: pointer;
+      color: blue;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a:visited {
+        color: blue;
+    }
+
+    .scroller {
+        color: black;
+        cursor: pointer;
+    }

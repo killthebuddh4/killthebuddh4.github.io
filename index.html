@@ -6,75 +6,31 @@
     <link rel="stylesheet" href="/index.css" />
     <link rel="icon" href="favicon.png" sizes="any" type="image/png" />
     <title>kill the buddha</title>
-    <script>
-      function setVh() {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-      }
-
-      window.onload = function () {
-        setVh();
-        const sections = document.querySelectorAll('section');
-        for (let i = 0; i < sections.length; i++) {
-          sections[i].style.display = "flex";
-        }
-      };
-
-      function scrollToTop() {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      }
-
-      function scrollByPage() {
-        window.scrollBy({
-          top: window.innerHeight,
-          behavior: "smooth",
-        });
-      }
-
-      function scrollByThreePages() {
-        window.scrollBy({
-          top: window.innerHeight * 3,
-          behavior: "smooth",
-        });
-      }
-    </script>
   </head>
   <body>
     <section>
       <p class="top">👇</p>
+      <p>achilles schmelzer</p>
       <nav>
-        <a class="scroller" onClick="scrollByPage()">
-          <h2>whoami</h2>
+        <a target="_blank" rel="noreferrer"href="https://essays.killthebuddha.pub">
+          essays
         </a>
-        <a href="https://achilles.engineering">
-          <h2>projects</h2>
+        <a target="_blank" rel="noreferrer"href="https://twitter.com/killthebuddha_">
+          twitter
         </a>
-        <a href="https://essays.killthebuddha.pub">
-          <h2>essays</h2>
+        <a target="_blank" rel="noreferrer"href="https://github.com/killthebuddh4">
+          github
         </a>
-        <a href="https://github.com/killthebuddh4">
-          <h2>github</h2>
+        <a target="_blank" rel="noreferrer"href="https://instagram.com/killthebuddh4">
+          instagram
         </a>
-        <a href="https://twitter.com/killthebuddha_">
-          <h2>twitter</h2>
+        <a target="_blank" rel="noreferrer"href="https://warpcast.com/killthebuddha.eth">
+          farcaster
         </a>
-        <a href="https://instagram.com/killthebuddh4">
-          <h2>instagram</h2>
+        <a target="_blank" rel="noreferrer"href="https://hey.xyz/u/killthebuddha.lens">
+          lens
         </a>
       </nav>
-    </section>
-    <section>
-      <p class="top scroller" onClick="scrollToTop()">👆</p>
-      <p>
-        My name's Achilles. I like to be creative, think about things, spend
-        time with my family, and work hard. I'm a huge fan of sunsets and cold
-        drinks. At night I like to read. I'm way too proud of being left-handed.
-        I like Socrates but not Plato. If my kids grow up to be happy, talented,
-        compassionate adults who are proud of their family, then I'll die happy.
-      </p>
     </section>
   </body>
 </html>

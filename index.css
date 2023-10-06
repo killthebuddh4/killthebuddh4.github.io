@@ -17,23 +17,21 @@
     }
 
     section {
-      display: none;
-      height: calc(100 * var(--vh));
+      height: 100vh;
       padding: 1rem;
+      display: flex;
       flex-direction: column;
       justify-content: flex-end;
       max-width: 65ch;
     }
 
-    article {
-      padding: 1rem;
-      flex-direction: column;
-      justify-content: flex-start;
-      max-width: 65ch;
-    }
-
     .top {
       margin-bottom: auto;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
     }
 
     ul,
@@ -52,9 +50,4 @@
 
     a:visited {
         color: blue;
-    }
-
-    .scroller {
-        color: black;
-        cursor: pointer;
     }
